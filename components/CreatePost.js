@@ -85,6 +85,10 @@ const CreatePost = (props) => {
                 placeholder="Enter Title"
                 {...register("title", {
                   required: "Title is required",
+                  maxLength: {
+                    value: 100,
+                    message: 'Maximum length is 100 characters'
+                  }
                 })}
               />
               <FormErrorMessage>
@@ -99,6 +103,10 @@ const CreatePost = (props) => {
                 rows={6}
                 {...register("body", {
                   required: "Content is required",
+                  maxLength: {
+                    value: 450,
+                    message: 'Maximum length is 450 characters'
+                  }
                 })}
               />
               <FormErrorMessage>

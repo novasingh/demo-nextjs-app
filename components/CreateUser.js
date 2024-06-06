@@ -84,6 +84,10 @@ const CreateUser = (props) => {
                 placeholder="Enter Name"
                 {...register("name", {
                   required: "Name is required",
+                  maxLength: {
+                    value: 25,
+                    message: 'Maximum length is 25 characters'
+                  }
                 })}
               />
               <FormErrorMessage>
@@ -99,7 +103,7 @@ const CreateUser = (props) => {
                   required: "Email is required",
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "invalid email address",
+                    message: "Invalid email address",
                   },
                 })}
               />
