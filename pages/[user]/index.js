@@ -12,7 +12,6 @@ const UserDetails = () => {
   const data = useParams();
   const [userData, setUserData] = useState(null);
   const [userPosts, setUsersPosts] = useState([]);
-
   const [loading, setLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -39,9 +38,9 @@ const UserDetails = () => {
   }, [data?.user]);
 
   useEffect(() => {
-    getUserDataById();
-    getUserPostById();
-  }, [getUserDataById, getUserPostById]);
+        getUserDataById();
+        getUserPostById();
+  }, [ getUserDataById, getUserPostById]);
 
   return (
     <Container
