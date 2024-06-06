@@ -19,9 +19,10 @@ const Post = ({ postList, loading, userData }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [commentData, setCommentData] = useState();
 
+  // GET POST COMMENT BY POST ID
   const getCommentsByPostId = async (id) => {
     setIsLoading(true);
-    const res = await fetch(`/api/get?url=/comments?post_id=${id}`);
+    const res = await fetch(`/api/get?url=/posts/${id}/comments`);
     const newData = await res.json();
     setCommentData(newData);
     setIsLoading(false);

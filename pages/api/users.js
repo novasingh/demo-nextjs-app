@@ -1,5 +1,6 @@
 import { fetchAPI } from "@/utils/api";
 
+// GET HANDLER TO USE THE GET USER LISTING WITH PAGINATION
 export default async function handler(req, res) {
   try {
     const { page = 1 } = req.query;

@@ -1,5 +1,6 @@
 import { fetchAPI } from "@/utils/api";
 
+// GET HANDLER TO USE THE CREATE USER , POST & COMMENT
 export default async function handler(req, res) {
   try {
     const { url } = req.query;

@@ -34,6 +34,7 @@ export default function Home() {
     getUsersListing();
   }, [getUsersListing]);
 
+  // Change Page Func
   const handlePageChange = (newPage) => {
     setPage(newPage);
     router.push(`/?page=${newPage}`, undefined, { shallow: true });

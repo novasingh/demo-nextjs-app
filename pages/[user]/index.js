@@ -19,9 +19,9 @@ const UserDetails = () => {
   const getUserDataById = useCallback(async () => {
     if (data?.user !== "" && data?.user !== undefined) {
       setLoading(true);
-      const res = await fetch(`/api/get?url=/users?id=${data?.user}`);
+      const res = await fetch(`/api/get?url=/users/${data?.user}`);
       const newData = await res.json();
-      setUserData(newData[0]);
+      setUserData(newData);
       setLoading(false);
     }
   }, [data?.user]);
@@ -30,7 +30,7 @@ const UserDetails = () => {
   const getUserPostById = useCallback(async () => {
     if (data?.user !== "" && data?.user !== undefined) {
       setLoading(true);
-      const res = await fetch(`/api/get?url=/posts?user_id=${data?.user}`);
+      const res = await fetch(`/api/get?url=/users/${data?.user}/posts`);
       const newData = await res.json();
       setUsersPosts(newData);
       setLoading(false);
